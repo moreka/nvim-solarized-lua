@@ -18,15 +18,16 @@ function M.load()
   local syntax = {}
 
   syntax["Normal"] = { fg = colors.base1, bg = colors.base03 }
-  syntax["FoldColumn"] = { fg = colors.base0, bg = colors.base02 }
+  syntax["FoldColumn"] = { fg = colors.base0, bg = colors.darkerfloat }
   syntax["Folded"] = { fg = colors.base0, bg = colors.fold, sp = colors.base03 }
   syntax["Terminal"] = syntax["Normal"]
-  syntax["ToolbarButton"] = { fg = colors.base1, bg = colors.base02, bold = true }
-  syntax["ToolbarLine"] = { fg = colors.none, bg = colors.base02 }
-  syntax["CursorLine"] = { fg = colors.none, bg = colors.base02 }
-  syntax["LineNr"] = { fg = colors.base00, bg = colors.base02 }
-  syntax["FloatBorder"] = { fg = colors.base1, bg = colors.none }
-  syntax["NormalFloat"] = { fg = colors.base1, bg = colors.base02 }
+  syntax["ToolbarButton"] = { fg = colors.base1, bg = colors.darkerfloat, bold = true }
+  syntax["ToolbarLine"] = { fg = colors.none, bg = colors.darkerfloat }
+  syntax["CursorLine"] = { fg = colors.none, bg = colors.darkerfloat }
+  syntax["LineNr"] = { fg = colors.base00, bg = colors.darkerfloat }
+  syntax["FloatBorder"] = { fg = colors.base1, bg = colors.darkerfloat }
+  syntax["FloatTitle"] = { fg = colors.orange, bold = true, bg = colors.darkerfloat }
+  syntax["NormalFloat"] = { fg = colors.base1, bg = colors.darkerfloat }
   syntax["WhiteSpace"] = { fg = colors.base01 }
 
   if g.solarized_diffmode == "low" then
@@ -40,38 +41,38 @@ function M.load()
     syntax["DiffDelete"] = { fg = colors.red, bg = colors.none, reverse = true }
     syntax["DiffText"] = { fg = colors.blue, bg = colors.none, reverse = true }
   else
-    syntax["DiffAdd"] = { fg = colors.green, bg = colors.base02, sp = colors.green }
-    syntax["DiffChange"] = { fg = colors.yellow, bg = colors.base02, sp = colors.yellow }
-    syntax["DiffDelete"] = { fg = colors.red, bg = colors.base02, bold = true }
-    syntax["DiffText"] = { fg = colors.blue, bg = colors.base02, sp = colors.blue }
+    syntax["DiffAdd"] = { fg = colors.green, bg = colors.darkerfloat, sp = colors.green }
+    syntax["DiffChange"] = { fg = colors.yellow, bg = colors.darkerfloat, sp = colors.yellow }
+    syntax["DiffDelete"] = { fg = colors.red, bg = colors.darkerfloat, bold = true }
+    syntax["DiffText"] = { fg = colors.blue, bg = colors.darkerfloat, sp = colors.blue }
   end
 
   if g.solarized_statusline == "low" then
     syntax["StatusLine"] = { fg = colors.base01, bg = colors.base2, reverse = true }
-    syntax["StatusLineNC"] = { fg = colors.base01, bg = colors.base02, reverse = true }
-    syntax["TabLine"] = { fg = colors.base01, bg = colors.base02, reverse = true }
-    syntax["TabLineFill"] = { fg = colors.base01, bg = colors.base02, reverse = true }
+    syntax["StatusLineNC"] = { fg = colors.base01, bg = colors.darkerfloat, reverse = true }
+    syntax["TabLine"] = { fg = colors.base01, bg = colors.darkerfloat, reverse = true }
+    syntax["TabLineFill"] = { fg = colors.base01, bg = colors.darkerfloat, reverse = true }
     syntax["TabLineSel"] = { fg = colors.base0, bg = colors.base3, reverse = true }
     syntax["VertSplit"] = { fg = colors.base01, bg = colors.none }
   elseif g.solarized_statusline == "flat" then
     syntax["StatusLine"] = { fg = colors.base02, bg = colors.base2, reverse = true }
     syntax["StatusLineNC"] = { fg = colors.base02, bg = colors.base1, reverse = true }
-    syntax["TabLineSel"] = { fg = colors.base2, bg = colors.base02 }
-    syntax["TabLine"] = { fg = colors.base01, bg = colors.base02 }
-    syntax["TabLineFill"] = { fg = colors.base01, bg = colors.base02 }
+    syntax["TabLineSel"] = { fg = colors.base2, bg = colors.darkerfloat }
+    syntax["TabLine"] = { fg = colors.base01, bg = colors.darkerfloat }
+    syntax["TabLineFill"] = { fg = colors.base01, bg = colors.darkerfloat }
     syntax["VertSplit"] = { fg = colors.base02, bg = colors.none }
   else
-    syntax["StatusLine"] = { fg = colors.base0, bg = colors.base02, reverse = true }
-    syntax["StatusLineNC"] = { fg = colors.base01, bg = colors.base02, reverse = true }
-    syntax["TabLine"] = { fg = colors.base01, bg = colors.base02, reverse = true }
-    syntax["TabLineFill"] = { fg = colors.base01, bg = colors.base02, reverse = true }
-    syntax["TabLineSel"] = { fg = colors.base0, bg = colors.base02, reverse = true }
+    syntax["StatusLine"] = { fg = colors.base0, bg = colors.darkerfloat, reverse = true }
+    syntax["StatusLineNC"] = { fg = colors.base01, bg = colors.darkerfloat, reverse = true }
+    syntax["TabLine"] = { fg = colors.base01, bg = colors.darkerfloat, reverse = true }
+    syntax["TabLineFill"] = { fg = colors.base01, bg = colors.darkerfloat, reverse = true }
+    syntax["TabLineSel"] = { fg = colors.base0, bg = colors.darkerfloat, reverse = true }
     syntax["VertSplit"] = { fg = colors.base01 }
   end
 
   if g.solarized_visibility == "high" then
-    syntax["CursorLineNr"] = { fg = colors.orange, bg = colors.base02, bold = true }
-    syntax["LineNr"] = { fg = colors.base0, bg = colors.base02 }
+    syntax["CursorLineNr"] = { fg = colors.orange, bg = colors.darkerfloat, bold = true }
+    syntax["LineNr"] = { fg = colors.base0, bg = colors.darkerfloat }
     syntax["NonText"] = { fg = colors.orange, bold = true }
     syntax["SpecialKey"] = { fg = colors.orange, reverse = true }
     syntax["SpellBad"] = { fg = colors.violet, bg = colors.base3, sp = colors.red, reverse = true, undercurl = true }
@@ -80,8 +81,8 @@ function M.load()
     syntax["SpellRare"] = { fg = colors.cyan, bg = colors.base3, sp = colors.red, reverse = true, undercurl = true }
     syntax["Title"] = { fg = colors.yellow, bold = true }
   elseif g.solarized_visibility == "low" then
-    syntax["CursorLineNr"] = { fg = colors.base01, bg = colors.base02, bold = true }
-    syntax["LineNr"] = { fg = colors.base01, bg = colors.base02 }
+    syntax["CursorLineNr"] = { fg = colors.base01, bg = colors.darkerfloat, bold = true }
+    syntax["LineNr"] = { fg = colors.base01, bg = colors.darkerfloat }
     syntax["NonText"] = { fg = colors.base02, bold = true }
     syntax["SpecialKey"] = { fg = colors.base02, reverse = true }
     syntax["SpellBad"] = { fg = colors.violet, sp = colors.violet, undercurl = true }
@@ -90,10 +91,10 @@ function M.load()
     syntax["SpellRare"] = { fg = colors.cyan, sp = colors.cyan, undercurl = true }
     syntax["Title"] = { fg = colors.base01, bold = true }
   else
-    syntax["CursorLineNr"] = { fg = colors.base0, bg = colors.base02, bold = true }
-    syntax["LineNr"] = { fg = colors.base00, bg = colors.base02 }
+    syntax["CursorLineNr"] = { fg = colors.base0, bg = colors.darkerfloat, bold = true }
+    syntax["LineNr"] = { fg = colors.base00, bg = colors.darkerfloat }
     syntax["NonText"] = { fg = colors.base00, bold = true }
-    syntax["SpecialKey"] = { fg = colors.base00, bg = colors.base02, bold = true }
+    syntax["SpecialKey"] = { fg = colors.base00, bg = colors.darkerfloat, bold = true }
     syntax["SpellBad"] = { fg = colors.violet, sp = colors.violet, undercurl = true }
     syntax["SpellCap"] = { fg = colors.violet, sp = colors.violet, undercurl = true }
     syntax["SpellLocal"] = { fg = colors.yellow, sp = colors.yellow, undercurl = true }
@@ -101,27 +102,27 @@ function M.load()
     syntax["Title"] = { fg = colors.orange, bold = true }
   end
 
-  syntax["ColorColumn"] = { fg = colors.none, bg = colors.base02 }
+  syntax["ColorColumn"] = { fg = colors.none, bg = colors.darkerfloat }
   syntax["Conceal"] = { fg = colors.blue }
-  syntax["CursorColumn"] = { fg = colors.none, bg = colors.base02 }
+  syntax["CursorColumn"] = { fg = colors.none, bg = colors.darkerfloat }
   syntax["Directory"] = { fg = colors.blue }
   syntax["EndOfBuffer"] = { fg = colors.none, ctermfg = colors.none, ctermbg = colors.none }
   syntax["ErrorMsg"] = { fg = colors.red, bg = colors.err_bg, reverse = true }
   syntax["IncSearch"] = { fg = colors.orange, standout = true }
-  syntax["MatchParen"] = { fg = colors.base3, bg = colors.base02, bold = true }
+  syntax["MatchParen"] = { fg = colors.base3, bg = colors.darkerfloat, bold = true }
   syntax["ModeMsg"] = { fg = colors.blue }
   syntax["MoreMsg"] = { fg = colors.blue }
-  syntax["Pmenu"] = { fg = colors.base1, bg = colors.base02 }
+  syntax["Pmenu"] = { fg = colors.base1, bg = colors.darkerfloat }
   syntax["PmenuSbar"] = { fg = colors.none, bg = colors.base01 }
   syntax["PmenuSel"] = { fg = colors.base2, bg = colors.base00 }
   syntax["PmenuThumb"] = { fg = colors.none, bg = colors.base0 }
   syntax["Question"] = { fg = colors.cyan, bold = true }
   syntax["Search"] = { fg = colors.yellow, reverse = true }
-  syntax["SignColumn"] = { fg = colors.base00, bg = colors.base02 }
+  syntax["SignColumn"] = { fg = colors.base00, bg = colors.darkerfloat }
   syntax["Visual"] = { fg = colors.base01, bg = colors.base03, reverse = true }
-  syntax["VisualNOS"] = { fg = colors.none, bg = colors.base02, reverse = true }
+  syntax["VisualNOS"] = { fg = colors.none, bg = colors.darkerfloat, reverse = true }
   syntax["WarningMsg"] = { fg = colors.orange, bold = true }
-  syntax["WildMenu"] = { fg = colors.base2, bg = colors.base02, reverse = true }
+  syntax["WildMenu"] = { fg = colors.base2, bg = colors.darkerfloat, reverse = true }
   syntax["Comment"] = { fg = colors.base01, italic = true }
   syntax["Constant"] = { fg = colors.cyan }
   syntax["CursorIM"] = { fg = colors.none, bg = colors.base1 }
@@ -228,7 +229,7 @@ function M.load()
   syntax["pandocTable"] = { fg = colors.blue }
   syntax["pandocTableStructure"] = { fg = colors.blue }
   syntax["pandocTableZebraLight"] = { fg = colors.blue, bg = colors.base03 }
-  syntax["pandocTableZebraDark"] = { fg = colors.blue, bg = colors.base02 }
+  syntax["pandocTableZebraDark"] = { fg = colors.blue, bg = colors.darkerfloat }
   syntax["pandocEmphasisTable"] = { fg = colors.blue, italic = true }
   syntax["pandocEmphasisNestedTable"] = { fg = colors.blue, bold = true }
   syntax["pandocStrongEmphasisTable"] = { fg = colors.blue, bold = true }
@@ -614,8 +615,8 @@ function M.load()
   syntax["MiniNotifyBorder"] = syntax["NormalFloat"]
 
   -- nvim-cmp syntax support
-  syntax["CmpDocumentation"] = { fg = colors.base2, bg = colors.base02 }
-  syntax["CmpDocumentationBorder"] = { fg = colors.base2, bg = colors.base02 }
+  syntax["CmpDocumentation"] = { fg = colors.base2, bg = colors.darkerfloat }
+  syntax["CmpDocumentationBorder"] = { fg = colors.base2, bg = colors.darkerfloat }
 
   syntax["CmpItemAbbr"] = { fg = colors.base1, bg = colors.none }
   syntax["CmpItemAbbrDeprecated"] = { fg = colors.base0, bg = colors.none }

@@ -3,6 +3,7 @@ local M = {}
 M.darkColors = {
   none = "none",
   base02 = "#073642",
+  darkerfloat = "#07252d",
   red = "#dc322f",
   green = "#859900",
   yellow = "#b58900",
